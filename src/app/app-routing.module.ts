@@ -5,6 +5,7 @@ import {PeliculaComponent} from './components/pelicula/pelicula.component';
 import {LocalizarComponent} from './components/localizar/localizar.component';
 import {LoginComponent} from './components/login/login.component';
 import {BuscarComponent} from './components/buscar/buscar.component';
+import {SignupComponent} from './components/signup/signup.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'buscar/:id', component: BuscarComponent, canActivate: []},
   {path: 'buscar', component: BuscarComponent, canActivate: []},
+  {path: 'signup', component: SignupComponent},
   {path: '**', component: HomeComponent, canActivate: []}
 ];
 

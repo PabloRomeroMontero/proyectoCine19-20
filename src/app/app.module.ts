@@ -9,9 +9,18 @@ import {LocalizarComponent} from './components/localizar/localizar.component';
 import {BuscarComponent} from './components/buscar/buscar.component';
 import {HeaderComponent} from './components/header/header.component';
 import {LoginComponent} from './components/login/login.component';
+import {environment} from '../environments/environment';
+import {SignupComponent} from './components/signup/signup.component';
 
 // Firebase
 import {HttpClientModule} from '@angular/common/http';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+
+// Servicios
+import {AngularAuthService} from './services/angular-auth.service';
+import {PeliculasService} from './services/peliculas.service';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +30,17 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     LocalizarComponent,
     BuscarComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AngularAuthService, PeliculasService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
