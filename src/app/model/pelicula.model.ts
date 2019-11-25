@@ -1,6 +1,6 @@
 import {LocalizacionModel} from './localizacion.model';
 
-export class PeliculaModel{
+export class PeliculaModel {
   sinopsis: string;
   popularidad: number;
   votoPromedio: number;

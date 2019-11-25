@@ -20,6 +20,7 @@ import { AngularFireModule } from 'angularfire2';
 // Servicios
 import {AngularAuthService} from './services/angular-auth.service';
 import {PeliculasService} from './services/peliculas.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -38,7 +39,9 @@ import {PeliculasService} from './services/peliculas.service';
     AppRoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AngularAuthService, PeliculasService],
   bootstrap: [AppComponent]

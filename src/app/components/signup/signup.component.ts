@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularAuthService} from '../../services/angular-auth.service';
+import {NgForm} from '@angular/forms';
+import {PeliculaModel} from '../../model/pelicula.model';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private aas: AngularAuthService) { }
 
   ngOnInit() {
   }
 
+  registrarse(form: NgForm) {
+    this.aas.registerUser('', '');
+  }
 }
