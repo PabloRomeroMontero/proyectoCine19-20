@@ -19,6 +19,9 @@
                    placeholder="Usuario"
                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                    #emailp="ngModel">
+            <div *ngIf="emailp.errors?.required">
+              Mete el correo brá
+            </div>
             <div *ngIf="emailp.errors?.pattern">
               Tienes mal el correo, introducelo bien
             </div>
