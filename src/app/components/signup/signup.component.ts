@@ -9,7 +9,8 @@ import {PeliculaModel} from '../../model/pelicula.model';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  password: string;
+  email: string;
   constructor(private aas: AngularAuthService) { }
 
   ngOnInit() {
