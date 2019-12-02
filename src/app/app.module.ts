@@ -8,9 +8,7 @@ import {PeliculaComponent} from './components/pelicula/pelicula.component';
 import {LocalizarComponent} from './components/localizar/localizar.component';
 import {BuscarComponent} from './components/buscar/buscar.component';
 import {HeaderComponent} from './components/header/header.component';
-import {LoginComponent} from './components/login/login.component';
 import {environment} from '../environments/environment';
-import {SignupComponent} from './components/signup/signup.component';
 
 // Firebase
 import {HttpClientModule} from '@angular/common/http';
@@ -18,9 +16,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 
 // Servicios
-import {AngularAuthService} from './services/angular-auth.service';
+import { AuthService} from './services/angular-auth.service';
 import {PeliculasService} from './services/peliculas.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CallbackComponent } from './components/callback/callback.component';
+import {AutenticadoService} from './services/autenticado.service';
+import { NoAuthComponent } from './no-auth/no-auth.component';
 
 
 @NgModule({
@@ -28,11 +29,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     HomeComponent,
     PeliculaComponent,
-    LoginComponent,
     LocalizarComponent,
     BuscarComponent,
     HeaderComponent,
-    SignupComponent
+    CallbackComponent,
+    NoAuthComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AngularAuthService, PeliculasService],
+  providers: [AuthService, PeliculasService,AutenticadoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

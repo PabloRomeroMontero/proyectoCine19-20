@@ -1,22 +1,23 @@
-import {NgModule} from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {PeliculaComponent} from './components/pelicula/pelicula.component';
 import {LocalizarComponent} from './components/localizar/localizar.component';
-import {LoginComponent} from './components/login/login.component';
 import {BuscarComponent} from './components/buscar/buscar.component';
-import {SignupComponent} from './components/signup/signup.component';
+import {CallbackComponent} from './components/callback/callback.component';
+import {NoAuthComponent} from './no-auth/no-auth.component';
+import {AutenticadoService} from './services/autenticado.service';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent, canActivate: []},
-  {path: 'pelicula/:id', component: PeliculaComponent, canActivate: []},
-  {path: 'localizar/:id', component: LocalizarComponent, canActivate: []},
-  {path: 'login', component: LoginComponent},
-  {path: 'buscar/:id', component: BuscarComponent, canActivate: []},
-  {path: 'buscar', component: BuscarComponent, canActivate: []},
-  {path: 'signup', component: SignupComponent},
-  {path: '**', component: HomeComponent, canActivate: []}
+  {path: 'home', component: HomeComponent, canActivate: [AutenticadoService]},
+  {path: 'pelicula/:id', component: PeliculaComponent, canActivate: [AutenticadoService]},
+  {path: 'localizar/:id', component: LocalizarComponent, canActivate: [AutenticadoService]},
+  {path: 'buscar/:id', component: BuscarComponent, canActivate: [AutenticadoService]},
+  {path: 'buscar', component: BuscarComponent, canActivate: [AutenticadoService]},
+  {path: 'callback', component: CallbackComponent},
+  {path: 'noAuth', component: NoAuthComponent},
+  {path: '**', component: HomeComponent, canActivate: [AutenticadoService]}
 ];
 
 @NgModule({
