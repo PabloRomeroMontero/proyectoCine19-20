@@ -15,9 +15,9 @@
       <p>{{pelicula.fraseCelebre}}</p>
       <p *ngIf="isEmpty(pelicula.sinopsis)">No existe este campo en esta pelicula</p>
       <p>Popularidad: <span class="badge badge-primary">
-          {{pelicula.popularidad | number:".0-0"}}/10</span>
+          {{pelicula.popularidad | number:".0-0"}}</span>
         <br>
-        Votos: <span class="badge badge-primary">{{pelicula.votoPromedio}}</span>
+        Votos: <span class="badge badge-primary">{{pelicula.votoPromedio}} /10</span>
       </p>
       <button type="button"
               name="button"

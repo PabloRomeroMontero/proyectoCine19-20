@@ -1,1 +1,51 @@
-<p>buscar works!</p>
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Buscar: </label>
+        <input [(ngModel)]="buscar"
+               type="text"
+               (input)="buscarPelicula()"
+               name="buscar"
+               class="form-control"
+               placeholder="Buscar una película">
+      </div>
+    </div>
+  </div>
+
+  <div class="row animated fadeIn fast" *ngIf="listaPeliculasBuscadas.length!=0 || listaPeliculasBuscadas.length!=null">
+    <div class="card-columns">
+      <div class="card" *ngFor="let pelicula of listaPeliculasBuscadas">
+        <img [src]="pelicula.img" class="card-img-top img-fluid" alt="pelicula.original_title">
+        <div class="card-body">
+          <h5 class="card-title"> {{ pelicula.titulo }}</h5>
+          <p class="card-text text-justify">{{ pelicula.sinopsis | slice:0:200}}</p>
+          <button (click)="ir(pelicula.id)"
+                  type="button" name="button"
+                  class="btn btn-outline-primary btn-block">
+            Ver más
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="listaPeliculasBuscadas.length==0&&buscar!=''&&!cargando">
+  <div class="d-flex justify-content-center align-items-center" id="main">
+    <h1 class="mr-3 pr-3 align-top border-right inline-block align-content-center">404</h1>
+    <div class="inline-block align-middle">
+      <h2 class="font-weight-normal lead" id="desc">No se han encontrado resultados de la busqueda.</h2>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="listaPeliculasBuscadas.length==0&&buscar==''" class="auto-container">
+  <div class="d-flex justify-content-center align-items-center" id="main">
+    <h1 class="mr-3 pr-3 align-top border-right inline-block align-content-center"></h1>
+    <div class="inline-block align-middle">
+      <h2 class="font-weight-normal lead" id="desc">Elija la pelicula que desees buscar.</h2>
+    </div>
+  </div>
+</div>

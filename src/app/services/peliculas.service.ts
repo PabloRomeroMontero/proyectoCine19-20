@@ -63,7 +63,7 @@ export class PeliculasService {
       });
   }
 
-  private anhadirFilmToList(film, peliculaList: PeliculaModel[]) {
+  anhadirFilmToList(film, peliculaList: PeliculaModel[]) {
     peliculaList.push(this.extractedFilm(film));
   }
 
@@ -98,11 +98,14 @@ export class PeliculasService {
   public queryFilm(id: string): any {
     // tslint:disable-next-line:no-unused-expression label-position
     return this.http.get('\n' +
-      'https://api.themoviedb.org/3/movie/' + id + '?api_key=c5509d69e528a48a6cef84bf1ae9309e&language=es-ES');
+      'https://api.themoviedb.org/3/movie/' +
+      id + '?api_key=c5509d69e528a48a6cef84bf1ae9309e&language=es-ES?include_adult=false');
   }
 
 
-  public queryFilms(cadena: string): PeliculaModel [] {
-    return null;
+  public queryFilms(cadena: string): any {
+    return this.http.get('\n' +
+      'https://api.themoviedb.org/3/search/movie?api_key=c5509d69e528a48a6cef84bf1ae9309e&language=es_ES&query=' +
+      cadena + '&page=1&include_adult=false');
   }
 }
