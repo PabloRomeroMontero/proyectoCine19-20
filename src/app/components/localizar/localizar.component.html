@@ -1,1 +1,9 @@
 
+<h2>Estas viendo las localizaciones donde se puede ver {{ title }}</h2>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="loc[0][0]" [longitude]="loc[0][1]">
+  <agm-marker [latitude]="loc[1][0]" [longitude]="loc[1][1]"></agm-marker>
+  <agm-marker [latitude]="loc[2][0]" [longitude]="loc[2][1]"></agm-marker>
+</agm-map>

@@ -24,8 +24,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CallbackComponent } from './components/callback/callback.component';
 import {AutenticadoService} from './services/autenticado.service';
 import { NoAuthComponent } from './no-auth/no-auth.component';
+import {AgmCoreModule} from '@agm/core';
 
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,9 @@ import { NoAuthComponent } from './no-auth/no-auth.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey : 'AIzaSyDbB-cciES0z4gFI37ZeY0uWp5Qc57cDCI'
+    }),
     FormsModule,
     ReactiveFormsModule
   ],
@@ -51,3 +56,6 @@ import { NoAuthComponent } from './no-auth/no-auth.component';
 })
 export class AppModule {
 }
+
+
+// AIzaSyAW6NbTFA1PLAarYk_oCmIgg3i7mcuoaKU
