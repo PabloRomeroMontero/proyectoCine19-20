@@ -10,14 +10,14 @@ import {AutenticadoService} from './services/autenticado.service';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent, canActivate: [AutenticadoService]},
-  {path: 'pelicula/:id', component: PeliculaComponent, canActivate: [AutenticadoService]},
-  {path: 'localizar/:id', component: LocalizarComponent, canActivate: [AutenticadoService]},
-  {path: 'buscar/:id', component: BuscarComponent, canActivate: [AutenticadoService]},
-  {path: 'buscar', component: BuscarComponent, canActivate: [AutenticadoService]},
+  {path: 'home', component: HomeComponent, canActivate: []},
+  {path: 'pelicula/:id', component: PeliculaComponent, canActivate: []},
+  {path: 'localizar/:id', component: LocalizarComponent, canActivate: []},
+  {path: 'buscar/:id', component: BuscarComponent, canActivate: []},
+  {path: 'buscar', component: BuscarComponent, canActivate: []},
   {path: 'callback', component: CallbackComponent},
   {path: 'noAuth', component: NoAuthComponent},
-  {path: '**', component: HomeComponent, canActivate: [AutenticadoService]}
+  {path: '**', component: HomeComponent, canActivate: []}
 ];
 
 @NgModule({

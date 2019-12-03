@@ -5,6 +5,40 @@
 
 
 <div>
-  <label>Peliculas en cartelera</label>
+  <h2>Peliculas en cartelera</h2>
+  <div class="accordian">
+    <ul>
+      <li *ngFor="let pelicula of peliculasAlgeciras">
+        <div class="image_title">
+          <a (click)="ir(pelicula.id)">{{pelicula.titulo}}</a>
+        </div>
+        <img src="{{pelicula.img}}" (click)="ir(pelicula.id)"/>
+      </li>
+    </ul>
+  </div>
+
+  <h2>Peliculas Populares</h2>
+  <div class="accordian">
+    <ul>
+      <li *ngFor="let pelicula of peliculasPopulares">
+        <div class="image_title">
+          <a (click)="ir(pelicula.id)">{{pelicula.titulo}}</a>
+        </div>
+        <img src="{{pelicula.img}}" (click)="ir(pelicula.id)"/>
+      </li>
+    </ul>
+  </div>
+
+  <h2>Peliculas populares entre los mas pequeños</h2>
+  <div class="accordian">
+    <ul>
+      <li *ngFor="let pelicula of peliculasParaLosMasPeques">
+        <div class="image_title">
+          <a (click)="ir(pelicula.id)">{{pelicula.titulo}}</a>
+        </div>
+        <img src="{{pelicula.img}}" (click)="ir(pelicula.id)"/>
+      </li>
+    </ul>
+  </div>
 
 </div>

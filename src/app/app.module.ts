@@ -15,6 +15,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 
+
+
 // Servicios
 import { AuthService} from './services/angular-auth.service';
 import {PeliculasService} from './services/peliculas.service';
@@ -44,7 +46,7 @@ import { NoAuthComponent } from './no-auth/no-auth.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, PeliculasService,AutenticadoService],
+  providers: [AuthService, PeliculasService, AutenticadoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
